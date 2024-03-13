@@ -10,16 +10,16 @@ import SwiftUI
 
 /// Primary Screen on launch
 struct ContentView: View {
-    
+
     // MARK: - Properties
-    
+
     @Environment(\.modelContext) var modelContext
     @Query var books: [Book]
-    
+
     @State private var showingAddScreen = false
-    
+
     // MARK: - Body View
-    
+
     var body: some View {
         NavigationStack {
             List {
@@ -28,7 +28,7 @@ struct ContentView: View {
                         HStack {
                             EmojiRatingView(rating: book.rating)
                                 .font(.largeTitle)
-                            
+
                             VStack(alignment: .leading) {
                                 Text(book.title)
                                     .font(.headline)
@@ -40,6 +40,9 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Bookworm")
+            .navigationDestination(for: Book.self) { book in
+                DetailView(book: book)
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add Book", systemImage: "plus") {
@@ -52,7 +55,7 @@ struct ContentView: View {
             }
         }
     } // end body
-    
+
 }
 
 // MARK: - Preview
