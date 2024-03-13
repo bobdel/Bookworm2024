@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RatingView: View {
 
+    // MARK: - Properties
+
     @Binding var rating: Int
 
     var label = ""
@@ -20,6 +22,8 @@ struct RatingView: View {
 
     var offColor = Color.gray
     var onColor = Color.yellow
+
+    // MARK: - Body View
 
     var body: some View {
         HStack {
@@ -39,6 +43,8 @@ struct RatingView: View {
         .buttonStyle(.plain)
     }
 
+    // MARK: - Functions
+
     func image(for number: Int) -> Image {
         if number > rating {
             offImage ?? onImage
@@ -49,6 +55,8 @@ struct RatingView: View {
 
 }
 
-#Preview {
+// MARK: - Preview
+
+#Preview(traits: .sizeThatFitsLayout) {
     RatingView(rating: .constant(4))
 }

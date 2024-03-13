@@ -38,6 +38,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		711BC2F12BA2176B004C9DE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71AD9F312BA16C3400FCED59 /* Book.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		711BC2F22BA2178C004C9DE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71AD9F332BA16D2200FCED59 /* AddBookView.swift */,
+				71AD9F352BA1747800FCED59 /* RatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		71F514EE2BA1651600C057FE = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +76,8 @@
 			children = (
 				71F514FA2BA1651600C057FE /* BookwormApp.swift */,
 				71F514FC2BA1651600C057FE /* ContentView.swift */,
-				71AD9F312BA16C3400FCED59 /* Book.swift */,
-				71AD9F332BA16D2200FCED59 /* AddBookView.swift */,
-				71AD9F352BA1747800FCED59 /* RatingView.swift */,
+				711BC2F22BA2178C004C9DE3 /* Views */,
+				711BC2F12BA2176B004C9DE3 /* Model */,
 				71F514FE2BA1651700C057FE /* Assets.xcassets */,
 				71F515002BA1651700C057FE /* Preview Content */,
 			);

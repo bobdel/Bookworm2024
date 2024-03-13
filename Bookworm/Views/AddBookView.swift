@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddBookView: View {
 
+    // MARK: - Properties
+
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
 
@@ -19,6 +21,8 @@ struct AddBookView: View {
     @State private var review = ""
 
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
+
+    // MARK: - body View
 
     var body: some View {
         NavigationStack {
@@ -49,9 +53,11 @@ struct AddBookView: View {
             }
             .navigationTitle("Add Book")
         }
-    }
+    } // end body
 }
 
-#Preview {
+// MARK: - Preview
+
+#Preview(traits: .sizeThatFitsLayout) {
     AddBookView()
 }
