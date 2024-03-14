@@ -5,6 +5,7 @@
 //  Created by Robert DeLaurentis on 3/12/24.
 //
 
+import OSLog
 import SwiftData
 import SwiftUI
 
@@ -43,6 +44,7 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteBooks)
             }
+            .onAppear(perform: { Logger.viewCycle.debug("ContentView appeared") })
             .navigationTitle("Bookworm")
             .navigationDestination(for: Book.self) { book in
                 DetailView(book: book)
@@ -58,6 +60,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingAddScreen) {
+                let _ = Logger.viewCycle.debug("AddBookView will appear")
                 AddBookView()
             }
         }

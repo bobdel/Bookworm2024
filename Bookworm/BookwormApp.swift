@@ -12,10 +12,6 @@ import SwiftUI
 @main
 struct BookwormApp: App {
 
-    // MARK: - Properties
-
-//    static let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "❓", category: "general")
-
     // MARK: - body View
 
     var body: some Scene {

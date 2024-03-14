@@ -5,6 +5,7 @@
 //  Created by Robert DeLaurentis on 3/12/24.
 //
 
+import OSLog
 import SwiftUI
 
 struct AddBookView: View {
@@ -47,10 +48,12 @@ struct AddBookView: View {
                     Button("Save") {
                         let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating)
                         modelContext.insert(newBook)
+                        Logger.dataStatus.debug("Book added. title: \(newBook.title)")
                         dismiss()
                     }
                 }
             }
+            .onAppear(perform: { Logger.viewCycle.debug("AddBookView appeared") })
             .navigationTitle("Add Book")
         }
     } // end body
