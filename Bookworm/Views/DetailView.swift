@@ -8,6 +8,9 @@
 import SwiftData
 import SwiftUI
 
+/// Presents a screen for one Book
+///
+/// - parameter book: A single deletable book
 struct DetailView: View {
 
     // MARK: - Properties

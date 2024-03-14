@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// View to display and adjust a book's rating
+///
+/// - parameter rating: Binding to an Int
+/// - returns: Renders a Text view containing stars to represent the rating
 struct RatingView: View {
 
     // MARK: - Properties

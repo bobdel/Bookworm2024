@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// View that presents a single emoji
+///
+/// - parameter rating: Int
+/// - returns: Renders a Text view containing an emoji
 struct EmojiRatingView: View {
 
     // MARK: - Properties
