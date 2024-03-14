@@ -12,6 +12,11 @@ struct DetailView: View {
 
     // MARK: - Properties
 
+    @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
+
+    @State private var showingDeleteAlert = false
+
     let book: Book
 
     // MARK: - body View
@@ -42,9 +47,27 @@ struct DetailView: View {
             RatingView(rating: .constant(book.rating))
                 .font(.largeTitle)
         }
+        .toolbar {
+            Button("Delete this book", systemImage: "trash") {
+                showingDeleteAlert = true
+            }
+        }
+        .alert("Delete book", isPresented: $showingDeleteAlert) {
+            Button("Delete", role: .destructive, action: deleteBook)
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("Are you sure?")
+        }
         .navigationTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
         .scrollBounceBehavior(.basedOnSize)
+    } // end body
+
+    // MARK: - Functions
+
+    func deleteBook() {
+        modelContext.delete(book)
+        dismiss()
     }
 }
 
