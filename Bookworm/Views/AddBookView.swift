@@ -49,6 +49,11 @@ struct AddBookView: View {
                         let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating)
                         modelContext.insert(newBook)
                         Logger.dataStatus.debug("Book added. title: \(newBook.title)")
+                        Logger.dataStatus.debug("Book added. author: \(newBook.author)")
+                        Logger.dataStatus.debug("Book added. genre: \(newBook.genre)")
+                        Logger.dataStatus.debug("Book added. review: \(newBook.review)")
+                        Logger.dataStatus.debug("Book added. rating: \(newBook.rating)")
+
                         dismiss()
                     }
                 }

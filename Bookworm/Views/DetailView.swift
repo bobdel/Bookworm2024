@@ -50,20 +50,20 @@ struct DetailView: View {
             RatingView(rating: .constant(book.rating))
                 .font(.largeTitle)
         }
-        .toolbar {
-            Button("Delete this book", systemImage: "trash") {
-                showingDeleteAlert = true
-            }
-        }
+        .navigationTitle(book.title)
+        .navigationBarTitleDisplayMode(.inline)
+        .scrollBounceBehavior(.basedOnSize)
         .alert("Delete book", isPresented: $showingDeleteAlert) {
             Button("Delete", role: .destructive, action: deleteBook)
             Button("Cancel", role: .cancel) { }
         } message: {
             Text("Are you sure?")
         }
-        .navigationTitle(book.title)
-        .navigationBarTitleDisplayMode(.inline)
-        .scrollBounceBehavior(.basedOnSize)
+        .toolbar {
+            Button("Delete this book", systemImage: "trash") {
+                showingDeleteAlert = true
+            }
+        }
     } // end body
 
     // MARK: - Functions
