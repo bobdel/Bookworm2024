@@ -58,10 +58,28 @@ struct AddBookView: View {
                     }
                 }
             }
-            .onAppear(perform: { Logger.viewCycle.debug("AddBookView appeared") })
-            .navigationTitle("Add Book")
+            .onAppear(perform: {
+                myAppear()
+            })
+                .navigationTitle("Add Book")
         }
     } // end body
+
+    func myAppear() {
+
+        let signpostID = signposter.makeSignpostID()
+        let appearSignpost = signposter.beginInterval(
+            "Appear Signpost",
+            id: signpostID,
+            "Start Message"
+        )
+        // the strings on intervals have to match
+
+        Logger.viewCycle.debug("AddBookView appeared")
+        pointsOfInterest.emitEvent("AddBookView appeared.", id: .exclusive)
+
+        signposter.endInterval("Appear Signpost", appearSignpost, "end message")
+    }
 }
 
 // MARK: - Preview

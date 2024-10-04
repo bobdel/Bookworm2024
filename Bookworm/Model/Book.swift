@@ -22,4 +22,6 @@ class Book {
         self.review = review
         self.rating = rating
     }
+
+    static let MockData = Book(title: "The Example", author: "The Author", genre: "Fiction", review: "This is an example data record", rating: 5)
 }
