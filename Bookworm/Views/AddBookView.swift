@@ -66,6 +66,7 @@ struct AddBookView: View {
     } // end body
 
     func myAppear() {
+        defaultLogger.log("default log example")
 
         let signpostID = signposter.makeSignpostID()
         let appearSignpost = signposter.beginInterval(
