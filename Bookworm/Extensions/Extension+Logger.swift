@@ -32,7 +32,7 @@ let pointsOfInterest = OSSignposter(
 // (events also apppear in the os_signpost instrument)
 //
 // call site example:
-// pointsOfInterest.emitEvent("Message", id: .exclusive)
+///** pointsOfInterest.emitEvent("Message", id: .exclusive)**
 
 // MARK: - OSSignposter
 
@@ -63,18 +63,20 @@ let defaultLogger = Logger()
 // Logger output appears in console logs
 // The logging system may redact some items for user privacy
 //
-// Example call site: defaultLogger.log("Message String")
+///** Example call site: defaultLogger.log("Message String")**
 // This example is a simple replacement for print() or NSLog()
 //
 // .log can be replaced by any of these levels, which adds filterable metadata
-// .notice, .debug, .info, .error, .log, .critical, .warning, .fault
+///** .notice, .debug, .info, .error, .log, .critical, .warning, .fault**
 
 // MARK: - Logger Extension
 
 // You can also create multiple logs with unique category metadata
-// Example call site: Logger.category.log("Message String")
+//
+///** Example call site: Logger.category.log("Message String")**
+//
 // .category can be replaced by general, viewCycle, or dataStatus
-// .log can be replaced with any of the levels on line 17
+// .log can be replaced with any of the levels on line 70
 
 extension Logger {
 
