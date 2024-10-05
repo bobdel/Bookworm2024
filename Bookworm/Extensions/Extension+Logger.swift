@@ -50,10 +50,10 @@ let signposter = OSSignposter(
 // Begin and End Intervals accept unique string interpolation messages
 //
 // call site (3 lines):
-// let signpostID = signposter.makeSignpostID()
-// let mySignpostState = signposter.beginInterval("Name (must match)", id: signpostID, "Start Message")
-// <code to measure>
-// signposter.endInterval("Name (must match)", mySignpostState, "End Message")
+///** let signpostID = signposter.makeSignpostID()**
+///** let mySignpostState = signposter.beginInterval("Name (must match)", id: signpostID, "Start Message")**
+//         <code to measure>
+///** signposter.endInterval("Name (must match)", mySignpostState, "End Message")**
 
 
 // MARK: - Logger
@@ -63,7 +63,7 @@ let defaultLogger = Logger()
 // Logger output appears in console logs
 // The logging system may redact some items for user privacy
 //
-///** Example call site: defaultLogger.log("Message String")**
+///**Example call site: defaultLogger.log("Message String")**
 // This example is a simple replacement for print() or NSLog()
 //
 // .log can be replaced by any of these levels, which adds filterable metadata
@@ -73,7 +73,7 @@ let defaultLogger = Logger()
 
 // You can also create multiple logs with unique category metadata
 //
-///** Example call site: Logger.category.log("Message String")**
+///**Example call site: Logger.category.log("Message String")**
 //
 // .category can be replaced by general, viewCycle, or dataStatus
 // .log can be replaced with any of the levels on line 70
